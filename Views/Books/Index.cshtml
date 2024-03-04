@@ -1,0 +1,20 @@
+@model IEnumerable<MyProject.Models.Book>
+
+<h2>Books</h2>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+    </tr>
+    @foreach (var book in Model) {
+        <tr>
+            <td>@Html.ActionLink(book.Title, "Details", new { id = book.Id })</td>
+            <td>@book.Author</td>
+        </tr>
+    }
+</table>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
